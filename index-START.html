@@ -77,6 +77,13 @@
       left: 10%;
     }
 
+    .notransition {
+      -webkit-transition: none !important;
+      -moz-transition: none !important;
+      -o-transition: none !important;
+      transition: none !important;
+  }
+
   </style>
 
   
@@ -97,8 +104,12 @@
         secondHand.style.transform = `rotate(${secondDegrees}deg)`;
         minuteHand.style.transform = `rotate(${minuteDegrees}deg)`;
         hourHand.style.transform = `rotate(${hourDegrees}deg)`;
+        if(secondDegress === 90) {
+          secondHand.classList.add('notransition');
+          secondHand.offsetHeight;
+          secondHand.classList.remove('notransition');
+        }
 
-        // console.log(seconds);
     }
 
     setInterval(setDate, 1000);
