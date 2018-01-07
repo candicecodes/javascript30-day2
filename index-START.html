@@ -90,7 +90,6 @@
         const now = new Date();
         const seconds = now.getSeconds();
         const secondDegrees = ((seconds / 60) * 360) + 90;
-        // const secondDegrees = seconds + 90;
         const minutes = now.getMinutes();
         const minuteDegrees = ((minutes / 60) * 360) + 90;
         const hours = now.getHours();
@@ -102,6 +101,7 @@
           secondHand.style.transition = 'none';
         } else {
           secondHand.style.transition = '';
+          //resets the inline style by removing it so the element can revert back to the stylesheet
         }
 
     }
